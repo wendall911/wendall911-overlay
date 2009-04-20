@@ -4,14 +4,14 @@
 
 EAPI="2"
 
-inherit cmake-utils git
+inherit git
 
 DESCRIPTION="A free, MIT-licensed replacement for pandora's flash player."
 HOMEPAGE="http://uint16.ath.cx/software/pandora_client.en.html"
 SRC_URI=""
 EGIT_REPO_URI="git://github.com/PromyLOPh/pianobar.git"
 
-LICENSE="as-is"
+LICENSE="MIT"
 SLOT="0"
 KEYWORDS="x86"
 IUSE="alsa esd network oss pulseaudio"
