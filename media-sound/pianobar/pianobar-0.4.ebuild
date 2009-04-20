@@ -27,19 +27,14 @@ RDEPEND="alsa? ( media-libs/alsa-lib )
 	esd? ( media-sound/esound )
 	pulseaudio? ( media-sound/pulseaudio )"
 
-src_configure() {
-	mycmakeargs="-DCMAKE_INSTALL_PREFIX=/usr"
-	cmake-utils_src_configure
-}
-
 src_compile() {
-	cp ${WORKDIR}/${PN}_build/libwardrobe/src/config.h \
-		${WORKDIR}/${P}/libwardrobe/src/
-	cp ${WORKDIR}/${PN}_build/libpiano/src/config.h \
-		${WORKDIR}/${P}/libpiano/src/
-	cmake-utils_src_compile
+	cmake \
+	  -DCMAKE_INSTALL_PREFIX=/usr \
+	  . || die "cmake failed"
+	  emake || die "emake failed."
 }
 
 src_install() {
-	DOCS="AUTHORS README COPYING" cmake-utils_src_install
+	emake DESTDIR="${D}" install || die "emake install failed."
+	dodoc AUTHORS README COPYING
 }
