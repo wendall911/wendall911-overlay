@@ -4,17 +4,19 @@
 
 NEED_PYTHON=2.4
 
-inherit distutils mercurial
-
+inherit distutils
 
 DESCRIPTION="ToscaWidgets is a framework for building reusable web components."
 HOMEPAGE="http://toscawidgets.org/"
-EHG_REPO_URI="http://toscawidgets.org/hg/${PN}"
-EHG_REVISION="0.9.3"
+
+MY_PN=ToscaWidgets
+MY_P=${MY_PN}-${PV}
+SRC_URI="http://pypi.python.org/packages/source/T/${MY_PN}/${MY_P}.tar.gz"
+
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~x86"
-IUSE="doc examples"
+IUSE="test"
 
 DEPEND="virtual/python
 		dev-python/setuptools
@@ -23,18 +25,8 @@ DEPEND="virtual/python
 		dev-python/pudge"
 RDEPEND="${DEPEND}"
 
-S="${WORKDIR}/${PN}"
+S="${WORKDIR}/${MY_P}"
 
-src_compile() {
-	sed -i -e 's/tag_build = dev/tag_build =/' ${S}/setup.cfg || die "sed failed"
-	sed -i -e 's/tag_date = true/tag_date = 0/' ${S}/setup.cfg || die "sed failed"
-}
-
-src_install() {
-	distutils_src_install
-	if use doc ; then
-		einfo "Generating docs as requested..."
-		/usr/bin/pudge --modules=pudge --documents=doc/index.rst --dest=doc/html
-		dohtml -r doc/html/*
-	fi
+src_test() {
+	PYTHONPATH=. "${python}" setup.py test || die "tests failed"
 }
