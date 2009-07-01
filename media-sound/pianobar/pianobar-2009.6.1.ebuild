@@ -18,7 +18,6 @@ IUSE="alsa esd network oss pulseaudio"
 
 DEPEND="dev-util/cmake
   media-libs/libao
-  net-misc/curl
   media-libs/faad2
   media-libs/libmad
   dev-libs/libxml2"
