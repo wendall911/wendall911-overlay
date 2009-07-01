@@ -6,11 +6,11 @@ NEED_PYTHON=2.4
 
 inherit distutils
 
-DESCRIPTION="repoze.who is an identification and authentication framework for arbitrary WSGI applications. It acts as WSGI middleware."
-HOMEPAGE="http://static.repoze.org/whodocs/index.html#module-repoze.who"
+DESCRIPTION="The repoze.who SQLAlchemy plugin provides an authenticator and a metadata provider plugins for SQLAlchemy or Elixir-based models."
+HOMEPAGE="http://code.gustavonarea.net/repoze.who.plugins.sa/"
 
-MY_PN=repoze.who
-MY_P=${MY_PN}-${PV}
+MY_PN=repoze.who.plugins.sa
+MY_P=${MY_PN}-${PV/_/}
 SRC_URI="http://pypi.python.org/packages/source/r/${MY_PN}/${MY_P}.tar.gz"
 
 LICENSE="MIT"
@@ -20,9 +20,9 @@ IUSE="test"
 
 DEPEND="virtual/python
 		dev-python/setuptools
-		>dev-python/paste-1.7"
+		>=dev-python/repoze.who-1.0.14
+		>=dev-python/sqlalchemy-0.5.0"
 RDEPEND="${DEPEND}"
-PDEPEND=">=dev-python/repoze.who-testutil-1.0_rc1"
 
 S="${WORKDIR}/${MY_P}"
 

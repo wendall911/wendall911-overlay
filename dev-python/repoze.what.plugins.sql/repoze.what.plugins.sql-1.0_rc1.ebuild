@@ -6,11 +6,11 @@ NEED_PYTHON=2.4
 
 inherit distutils
 
-DESCRIPTION="testutils for repoze.who"
-HOMEPAGE="http://static.repoze.org/whodocs/index.html#module-repoze.who"
+DESCRIPTION="Provides group and permission adapters that enable you to store your groups and permissions in databases, as well as a module with some utilities to get started with repoze.who and repoze.what very quickly."
+HOMEPAGE="http://what.repoze.org/docs/1.x/Manual/Plugins/index.html"
 
-MY_PN=repoze.who-testutil
-MY_P=${MY_PN}-1.0b2
+MY_PN=repoze.what.plugins.sql
+MY_P=${MY_PN}-${PV/_/}
 SRC_URI="http://pypi.python.org/packages/source/r/${MY_PN}/${MY_P}.tar.gz"
 
 LICENSE="MIT"
@@ -20,7 +20,8 @@ IUSE="test"
 
 DEPEND="virtual/python
 		dev-python/setuptools
-		>=dev-python/repoze.who-1.0"
+		>=dev-python/repoze.what-1.0.3
+		>=dev-python/sqlalchemy-0.5.0"
 RDEPEND="${DEPEND}"
 
 S="${WORKDIR}/${MY_P}"

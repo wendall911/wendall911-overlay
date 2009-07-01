@@ -6,10 +6,12 @@ NEED_PYTHON=2.4
 
 inherit distutils
 
-DESCRIPTION="repoze.who is an identification and authentication framework for arbitrary WSGI applications. It acts as WSGI middleware."
-HOMEPAGE="http://static.repoze.org/whodocs/index.html#module-repoze.who"
+DESCRIPTION="Configures repoze.who and repoze.what in one go so that you can
+have an authentication and authorization system working quickly - hence the
+name."
+HOMEPAGE="http://code.gustavonarea.net/repoze.what-quickstart/"
 
-MY_PN=repoze.who
+MY_PN=repoze.what-quickstart
 MY_P=${MY_PN}-${PV}
 SRC_URI="http://pypi.python.org/packages/source/r/${MY_PN}/${MY_P}.tar.gz"
 
@@ -20,9 +22,11 @@ IUSE="test"
 
 DEPEND="virtual/python
 		dev-python/setuptools
-		>dev-python/paste-1.7"
+		>=dev-python/repoze.what-1.0.3
+		>=dev-python/repoze.who.plugins.sa-1.0_rc2
+		dev-python/repoze.what.plugins.sql
+		dev-python/repoze.who-friendlyform"
 RDEPEND="${DEPEND}"
-PDEPEND=">=dev-python/repoze.who-testutil-1.0_rc1"
 
 S="${WORKDIR}/${MY_P}"
 
