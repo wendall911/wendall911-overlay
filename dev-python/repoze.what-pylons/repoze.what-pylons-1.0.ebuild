@@ -20,7 +20,7 @@ IUSE="test"
 
 DEPEND="virtual/python
 		dev-python/setuptools
-		>=dev-python/repoze.what-1.0.4"
+		>=dev-python/repoze.what-1.0.8"
 RDEPEND="${DEPEND}"
 
 S="${WORKDIR}/${MY_P}"
