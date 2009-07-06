@@ -16,7 +16,7 @@ SRC_URI="http://pypi.python.org/packages/source/r/${MY_PN}/${MY_P}.tar.gz"
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~x86"
-IUSE="test"
+IUSE=""
 
 DEPEND="virtual/python
 		dev-python/setuptools
@@ -26,6 +26,7 @@ RDEPEND="${DEPEND}"
 
 S="${WORKDIR}/${MY_P}"
 
-src_test() {
-	PYTHONPATH=. "${python}" setup.py test || die "tests failed"
+src_unpack() {
+	unpack ${A}
+	rm -r "${S}/tests"
 }

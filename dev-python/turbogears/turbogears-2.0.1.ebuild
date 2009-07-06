@@ -23,7 +23,7 @@ IUSE=""
 RDEPEND=">=dev-python/pylons-0.9.7
 	>=dev-python/genshi-0.5.1
 	>=dev-python/webflash-0.1_alpha8
-	>=dev-python/toscawidgets-0.9.4
+	>=dev-python/toscawidgets-0.9.7.1
 	>=dev-python/weberror-0.10.1
 	>=dev-python/repoze.what-pylons-1.0_rc3
 	>=dev-python/repoze.tm2-1.0_alpha4
