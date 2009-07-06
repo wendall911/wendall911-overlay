@@ -19,7 +19,7 @@ DEPEND="virtual/python
 		dev-python/setuptools
 		dev-python/pudge
 		>=dev-python/formencode-1.1
-		=dev-python/ToscaWidgets-9999"
+		=dev-python/toscawidgets-9999"
 RDEPEND="${DEPEND}"
 
 S="${WORKDIR}/${PN}"

@@ -6,12 +6,12 @@ NEED_PYTHON=2.4
 
 inherit distutils
 
-DESCRIPTION="tw.forms is a library of widgets for building HTML forms. It enables the rapid creation of forms, with server-side validation that returns clear error messages to users."
+DESCRIPTION="ToscaWidgets is a framework for building reusable web components."
 HOMEPAGE="http://toscawidgets.org/"
 
-MY_PN=tw.forms
+MY_PN=ToscaWidgets
 MY_P=${MY_PN}-${PV}
-SRC_URI="http://pypi.python.org/packages/source/t/${MY_PN}/${MY_P}.tar.gz"
+SRC_URI="http://pypi.python.org/packages/source/T/${MY_PN}/${MY_P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
@@ -20,9 +20,9 @@ IUSE="test"
 
 DEPEND="virtual/python
 		dev-python/setuptools
-		dev-python/pudge
-		>=dev-python/formencode-1.1
-		=dev-python/toscawidgets-0.9.3"
+		dev-python/webob
+		dev-python/simplejson
+		dev-python/pudge"
 RDEPEND="${DEPEND}"
 
 S="${WORKDIR}/${MY_P}"

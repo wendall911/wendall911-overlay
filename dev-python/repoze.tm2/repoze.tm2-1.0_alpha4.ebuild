@@ -6,11 +6,11 @@ NEED_PYTHON=2.4
 
 inherit distutils
 
-DESCRIPTION="repoze.who-friendlyform is a repoze.who plugin which provides a collection of developer-friendly form plugins, although for the time being such a collection has only one item."
-HOMEPAGE="http://code.gustavonarea.net/repoze.who-friendlyform/"
+DESCRIPTION="repoze.tm2 is WSGI middleware which uses the ZODB package's transaction manager to wrap a call to its pipeline children inside a transaction."
+HOMEPAGE="http://docs.repoze.org/tm2/"
 
-MY_PN=repoze.who-friendlyform
-MY_P=${MY_PN}-1.0b3
+MY_PN=repoze.tm2
+MY_P=${MY_PN}-1.0a4
 SRC_URI="http://pypi.python.org/packages/source/r/${MY_PN}/${MY_P}.tar.gz"
 
 LICENSE="MIT"
