@@ -27,9 +27,12 @@ RDEPEND=">=dev-python/pylons-0.9.7
 	>=dev-python/weberror-0.10.1
 	>=dev-python/repoze.what-pylons-1.0_rc3
 	>=dev-python/repoze.tm2-1.0_alpha4
-	>=dev-python/turbojson-1.2.1"
+	>=dev-python/turbojson-1.2.1
+	>=dev-python/sqlalchemy-migrate-0.5.2
+	>=dev-python/transaction-1.0_alpha1"
 DEPEND="${RDEPEND}
 	app-arch/unzip
 	>=dev-python/setuptools-0.6_rc9"
+PDEPEND=">=dev-python/tg.devtools-2.0.1"
 
 S="${WORKDIR}/${MY_P}"
