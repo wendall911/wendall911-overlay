@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/turbogears/turbogears-1.0.8.ebuild,v 1.2 2009/04/01 11:49:33 patrick Exp $
+# $Header$
 
 NEED_PYTHON=2.4
 
@@ -29,7 +29,7 @@ RDEPEND=">=dev-python/pylons-0.9.7
 	>=dev-python/repoze.tm2-1.0_alpha4
 	>=dev-python/turbojson-1.2.1"
 DEPEND="${RDEPEND}
-	app-arch/zip
+	app-arch/unzip
 	>=dev-python/setuptools-0.6_rc9"
 
 S="${WORKDIR}/${MY_P}"

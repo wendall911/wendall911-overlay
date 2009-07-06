@@ -18,12 +18,11 @@ SLOT="0"
 KEYWORDS="~x86"
 IUSE="test"
 
+RDEPEND="dev-python/webob
+		dev-python/simplejson"
 DEPEND="virtual/python
 		dev-python/setuptools
-		dev-python/webob
-		dev-python/simplejson
 		dev-python/pudge"
-RDEPEND="${DEPEND}"
 
 S="${WORKDIR}/${MY_P}"
 
