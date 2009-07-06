@@ -18,7 +18,9 @@ LICENSE="MIT"
 SLOT="0"
 IUSE="test"
 
-RDEPEND="dev-python/ruledispatch
+RDEPEND="
+	>=dev-python/prioritized_methods-0.2
+	dev-python/ruledispatch
 	dev-python/simplejson"
 DEPEND="${RDEPEND}
 	dev-python/setuptools
