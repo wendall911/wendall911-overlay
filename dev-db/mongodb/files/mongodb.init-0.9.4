@@ -1,0 +1,43 @@
+#!/sbin/runscript
+# Copyright 1999-2009 Gentoo Foundation
+# Distributed under the terms of the GNU General Public License v2
+# $Header: $
+
+depend() {
+	need net
+}
+
+start() {
+	ebegin "Starting ${SVCNAME}"
+	if test -z "$MONGODB_PID_FILE"; then
+        echo "* ERROR: MONGODB_PID_FILE must be set"
+        return -1
+    fi
+	if test -z "$MONGODB_USER"; then
+        echo "* ERROR: MONGODB_USER must be set"
+        return -1
+	fi
+    args=""
+	if test -n "$MONGODB_DATA"; then
+		args="$args --dbpath $MONGODB_DATA"
+	fi
+	if test -n "$MONGODB_PORT"; then
+		args="$args --port $MONGODB_PORT"
+	fi
+	if test -n "$MONGODB_IP"; then
+		args="$args --bind_ip $MONGODB_IP"
+	fi
+	if test -n "$MONGODB_OPTIONS"; then
+		args="$args $MONGODB_OPTIONS"
+	fi
+
+	start-stop-daemon --background --start --user ${MONGODB_USER} --pidfile \
+    "${MONGODB_PID_FILE}" --make-pidfile --exec ${MONGODB_EXEC} -- ${args} run
+	eend $?
+}
+
+stop() {
+	ebegin "Stopping ${SVCNAME}"
+	start-stop-daemon --stop --exec ${EXEC} --pidfile ${MONGODB_PID_FILE}
+	eend $? "Failed to stop ${SVCNAME}"
+}
